@@ -24,9 +24,9 @@ sed -e 's/-j//g' -i temp.txt
 #remove -k from the input file.
 sed -e 's/-k//g' -i temp.txt
 #read and cut './' from the lines and echo to the arguments file.
-sed -n 'p;n' $1 | tr -d "./" > arguments.txt
+sed -n 'p;n' temp.txt | tr -d "./" > arguments.txt
 #read and append the time to its own time.csv file.
-sed -n 2~2p $1 > time.csv
+sed -n 2~2p temp.txt > time.csv
 #Clean up the leading whitespace
 sed "s/^[ \t]*//" -i arguments.txt
 #Clean up double whitespace and add a comma
